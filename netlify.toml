@@ -1,3 +1,8 @@
+[build]
+base = "Step-by-step/"
+publish = "Step-by-step/build/"
+command = "npm run build"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
