@@ -12,7 +12,7 @@ const navigation =()=>
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <button >Search</button>
+                    <Button variant="outline-light">Search</Button>
                  </Form>
                 </Navbar>
         )
