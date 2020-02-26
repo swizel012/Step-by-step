@@ -14,6 +14,11 @@ form {
   margin: 0 auto;
   
 }
+.form{
+  padding: $ruler;
+  width: $ruler*20;
+  margin: 0 auto;
+}
 
 .segment {
   padding: $ruler*2 0;
@@ -29,9 +34,12 @@ form {
   padding: $ruler;
   background-color:$color-bg;
   text-shadow: 1px 1px 0 $color-white;
+  position: relative;
+  display: inline;
 }
 
 label {
+  position: relative;
   display: block;
   margin-bottom: $ruler*1.5;
   width: 100%;
@@ -66,7 +74,6 @@ input {
   &:active {
     box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
   }
-  
   
   
   &.red {

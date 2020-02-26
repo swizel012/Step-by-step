@@ -7,11 +7,11 @@ class Login extends React.Component {
       <div  > 
         <Logo> </Logo>
       <div class="body" >
-        <img width="46%"  src="./assets/5.jpg"/> 
+        <img width="46%"   src="./assets/5.jpg"/> 
         <form>
   
   <div class="segment">
-    <h1>Sign up</h1>
+    <h1>Sign in</h1>
   </div>
   
   <label>
