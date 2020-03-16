@@ -5,7 +5,7 @@ const logo =()=>
     return(
           <div className={classes.logo} >
           <img  width="5%" height="5%" src="/logo.png"></img>
-           <b> <h3 className={classes.h3}>Step-by-Step </h3></b>
+           <b> <h4 className={classes.h3}>Step-by-Step </h4></b>
         </div>
     )
 }
