@@ -19,7 +19,6 @@ const routing = (
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/myprofile" component={MyProfile} />
-        <Route path="/newrecipe" component={NewRecipe} />
         <Route component={Notfound} />
       </Switch>
       </div>

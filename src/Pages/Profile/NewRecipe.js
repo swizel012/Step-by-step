@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '../../components/Logo/Logo';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Search from '../../components/Navbar/Search';
@@ -11,14 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import Ingredients from './Ingredients';
 
 const useStyles = makeStyles(theme => ({
-    flex2:{
-      position: 'absolute',
-      top:'3%',
-      right:'2%',
-    },
+    
     root: {
       width: '100%',
-      paddingRight:'3%',
+      paddingRight:'10%',
       backgroundImage: 'url(./assets/marble.jpg)',
 
     },
@@ -28,9 +23,11 @@ const useStyles = makeStyles(theme => ({
     instructions: {
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(1),
+ 
     },
     container:{
       marginLeft:'10%',
+      
     },
     
     
@@ -74,13 +71,6 @@ export default function NewRecipe() {
   
   return (
     <div>
-      
-        <Logo> </Logo> 
-  
-        <Search > </Search>
-        <p className={classes.flex2}>Logout </p>
-      <hr/>
-       
       <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map(label => (

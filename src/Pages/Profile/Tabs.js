@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -15,6 +13,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import RecipeCard from '../../components/RecipeCard/RecipeCard';
 import AddIcon from '@material-ui/icons/Add';
 import {Link} from 'react-router-dom';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import TurnedInNotIcon from '@material-ui/icons/TurnedInNot';
+import NewRecipe from './NewRecipe';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,11 +96,11 @@ export default function ProfileTabs() {
           aria-label="scrollable force tabs example"
           className={classes.neo}
         >
-          <Tab label="My Recipes" icon={<PhoneIcon />} {...a11yProps(0)} />
-          <Tab label="Add Recipe" icon={<FavoriteIcon />} {...a11yProps(1)} />
+          <Tab label="My Recipes" icon={<MenuBookIcon />} {...a11yProps(0)} />
+          <Tab label="Add Recipe" icon={<AddCircleOutlineIcon />} {...a11yProps(1)} />
           <Tab label="Followers" icon={<PersonPinIcon />} {...a11yProps(2)} />
           <Tab label="Following " icon={<PersonPinIcon />} {...a11yProps(3)} />
-          <Tab label="Saved " icon={<PersonPinIcon />} {...a11yProps(4)} />
+          <Tab label="Saved " icon={<TurnedInNotIcon/>} {...a11yProps(4)} />
           
         </Tabs>
       </AppBar>
@@ -114,17 +116,7 @@ export default function ProfileTabs() {
 
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Link to="/newrecipe"> 
-      <div className={classes.Addrecipecard} > 
-       
-      <Tooltip title="Add" aria-label="add">
-      <Fab color="primary" className={classes.fab}>
-         <AddIcon />
-       </Fab>
-      </Tooltip>
-      
-      </div>
-      </Link>
+      <NewRecipe> </NewRecipe>
       </TabPanel>
 
       <TabPanel value={value} index={2}>
