@@ -11,6 +11,7 @@ import ProfileTabs from '../../components/Tabs/Tabs';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
+import Search from '../../components/Navbar/Search';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -54,9 +55,7 @@ const useStyles = makeStyles(theme => ({
     right:'2%',
   },
   flex:{
-    position: 'absolute',
-    top:'3%',
-    right:'50%',
+    
   },
   root: {
     flexGrow: 1,
@@ -111,8 +110,7 @@ export default function MyProfile() {
     <div>
       
         <Logo> </Logo> 
-  
-        <p className={classes.flex}> Search</p>
+        <Search className={classes.flex}> </Search>
         <p className={classes.flex2}>Logout </p>
       
       
