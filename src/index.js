@@ -5,7 +5,6 @@ import App from './App';
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
 import MyProfile from './Pages/Profile/MyProfile';
-import NewRecipe from './Pages/Profile/NewRecipe';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Link, BrowserRouter as Router, Switch  } from 'react-router-dom';
