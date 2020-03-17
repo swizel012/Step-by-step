@@ -10,7 +10,7 @@ import MyProfile from '../Profile/MyProfile'
 require('dotenv').config();
 
 firebase.initializeApp({
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: 'AIzaSyC8HRiOo1srYT0DveHZf1xxj6biEX6R0vI',
   authDomain: "step-by-step-89b62.firebaseapp.com"
 })
 
