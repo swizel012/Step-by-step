@@ -1,31 +1,44 @@
-import React from 'react'
-import classes from './Login.modules.scss';
+import React, { Component } from "react"
 import Logo from '../../components/Logo/Logo';
+import classes from './Login.modules.scss';
 import {Link} from 'react-router-dom';
-import Backdrop from '@material-ui/core/Backdrop';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import MyProfile from '../Profile/MyProfile'
 
-const useStyles = makeStyles(theme => ({
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
-  },
-}));
+firebase.initializeApp({
+  apiKey: "AIzaSyC8HRiOo1srYT0DveHZf1xxj6biEX6R0vI",
+  authDomain: "step-by-step-89b62.firebaseapp.com"
+})
 
-export default function Login() {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleToggle = () => {
-    setOpen(!open);
-  };
+class Login extends Component {
+  state = { isSignedIn: false }
+  uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }
+  }
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user })
+      console.log("user", user)
+    })
+  }
 
+  render() {
+    
   return (
     <div>
+      {this.state.isSignedIn ? (
+   
+     <MyProfile> </MyProfile>
+      
+      ) : (
+        <div>
             <Logo> </Logo>
             <div class="body" >
               <img width="46%"   src="./assets/5.jpg"/> 
@@ -42,11 +55,17 @@ export default function Login() {
           <input class="ip"  type="password" placeholder="Password"/>
         </label>
         <Link to="/myprofile"  > 
-        <button onClick={handleToggle} class="red but" type="button"><i class="icon ion-md-lock"></i> Log in</button>
+        <button  class="red but" type="button"><i class="icon ion-md-lock"></i> Log in</button>
         </Link>
-        <br/>
+       
+        <StyledFirebaseAuth 
+            uiConfig={this.uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+        
+  
         Forgot passwrod? <a href="#">Click Here </a>
-        <br/>
+
         <br/>
         <center>- or- </center>
         <br/>
@@ -55,15 +74,18 @@ export default function Login() {
         <br/>
         </button>
         </Link>   
-
-        
-        
+ 
       </form>
               
             </div>
-      <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
-        <CircularProgress color="inherit" />
-      </Backdrop>
+      
     </div>
+        )}
+      </div>
+    
+
+    
   );
 }
+}
+export default Login

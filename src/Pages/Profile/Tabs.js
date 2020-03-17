@@ -51,14 +51,10 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    width: '100%',
     backgroundColor: theme.palette.background.paper,
-    boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)',
     
   },
-  neo:{
-    boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)',
-  },
+  
   myStyles: {
     backgroundColor: '#F5F5F5',
     padding:'2%',
@@ -66,13 +62,7 @@ const useStyles = makeStyles(theme => ({
     gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',
     gap: '1% 1%',
   },
-  Addrecipecard: {
-    justifyContent:'center',
-    padding:'15%',
-    width:'20%',
-    height:'30%',
-    boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)',
-  },
+  
 }));
 
 export default function ProfileTabs() {
@@ -94,7 +84,7 @@ export default function ProfileTabs() {
           indicatorColor="primary"
           textColor="primary"
           aria-label="scrollable force tabs example"
-          className={classes.neo}
+         
         >
           <Tab label="My Recipes" icon={<MenuBookIcon />} {...a11yProps(0)} />
           <Tab label="Add Recipe" icon={<AddCircleOutlineIcon />} {...a11yProps(1)} />

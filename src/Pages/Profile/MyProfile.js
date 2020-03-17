@@ -12,6 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Search from '../../components/Navbar/Search';
+import User from '../../components/Navbar/user';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,16 +53,20 @@ const useStyles = makeStyles(theme => ({
   flex2:{
     position: 'absolute',
     top:'3%',
-    right:'2%',
+    right:'0%',
   },
-  flex:{
-    
-  },
+  
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
     height: 224,
+  },
+  container:{
+    position:'absolute',
+    marginLeft:'8%',
+    marginRight:'8%',
+    
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -75,10 +80,8 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    marginLeft:'14%',
-    marginRight:'6%',
     marginTop:'1%',
-    boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)',
+    
   },
   overlay: {
     position: 'absolute',
@@ -110,15 +113,12 @@ export default function MyProfile() {
     <div>
       
         <Logo> </Logo> 
-        <Search className={classes.flex}> </Search>
-        <p className={classes.flex2}>Logout </p>
+        <Search > </Search>
+        <User className={classes.flex2}> </User>
       
-      
-
-     
       <hr/>
        
-      
+      <div className={classes.container}> 
        <Paper className={classes.mainFeaturedPost} >
         {<img style={{ display: 'none' }}  />}
           <div className={classes.overlay} />
@@ -133,6 +133,7 @@ export default function MyProfile() {
             </Grid>
           </Grid>
         </Paper>
+
 
        <div className={classes.root}>
        <Tabs
@@ -150,10 +151,12 @@ export default function MyProfile() {
         <Tab label="Item Six" {...a11yProps(5)} />
         <Tab label="Item Seven" {...a11yProps(6)} />
       </Tabs>
+     
       <TabPanel value={value} index={0}>
         
         <ProfileTabs> </ProfileTabs>
       </TabPanel>
+      </div>
       <TabPanel value={value} index={1}>
         Item Two
       </TabPanel>

@@ -37,7 +37,7 @@ class Register extends React.Component {
  
 
   <br/>
-  Already a member ? <Link to="/login"> login </Link><br/>
+  Already a member ? <Link to="/"> login </Link><br/>
   </div>
 
 </form>

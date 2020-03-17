@@ -8,6 +8,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Ingredients from './Ingredients';
+import Instructions from './Instructions';
 
 const useStyles = makeStyles(theme => ({
     
@@ -15,6 +16,7 @@ const useStyles = makeStyles(theme => ({
       width: '100%',
       paddingRight:'10%',
       backgroundImage: 'url(./assets/marble.jpg)',
+      
 
     },
     backButton: {
@@ -23,13 +25,10 @@ const useStyles = makeStyles(theme => ({
     instructions: {
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(1),
+      marginLeft:'10%',
  
     },
-    container:{
-      marginLeft:'10%',
-      
-    },
-    
+   
     
 }));
 
@@ -42,7 +41,7 @@ function getStepContent(stepIndex) {
     case 0:
       return (<Ingredients></Ingredients>);
     case 1:
-      return 'Instructions/Steps';
+      return (<Instructions> </Instructions>);
     case 2:
       return 'Details';
     default:
@@ -80,7 +79,7 @@ export default function NewRecipe() {
         ))}
       </Stepper>
 
-      <div className={classes.container}>
+      <div >
         {activeStep === steps.length ? (
           <div>
             <Typography className={classes.instructions}>All steps completed</Typography>
