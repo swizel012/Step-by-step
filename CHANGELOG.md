@@ -14,3 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Profile page
 - Add new recipe tab
 - Saved recipes tab
+
+## [0.3.0] - 2020-03-17
+### Added
+- Google authentication
