@@ -7,7 +7,6 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import MyProfile from '../Profile/MyProfile'
 
 
-require('dotenv').config();
 
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_API_KEY,
