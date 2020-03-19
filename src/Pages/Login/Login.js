@@ -10,7 +10,7 @@ import MyProfile from '../Profile/MyProfile'
 
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: "step-by-step-89b62.firebaseapp.com"
+  authDomain: "step-by-step-96e75.firebaseapp.com"
 })
 
 class Login extends Component {
