@@ -1,7 +1,8 @@
 # Step-by-step
 An easy recipe sharing web app
 
-#Dependencies
+
+ Dependencies
 
 npm install @material-ui/core
 
