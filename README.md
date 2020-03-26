@@ -1,21 +1,14 @@
 # Step-by-step
 An easy recipe sharing web app
 
+# 1: API Base URL
+Add https://asia-northeast1-step-by-step-96e75.cloudfunctions.net/api as the 'proxy' value in package.json
 
- Dependencies
+# 2: Install packages
+run npm install
 
-npm install @material-ui/core
+# 3: Run project
+run  npm start
 
-npm install @material-ui/icons
-
-npm install react-bootstrap bootstrap
-
-npm install --save clsx
-
-npm install --save firebase
-
-npm install material-table --save
-
-npm install --save react-firebaseui
-
-npm install --save react-router-dom
+# 4: Open it
+go to http://localhost:3000
